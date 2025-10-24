@@ -13,10 +13,10 @@ Route::get('/', function () {
 });
 
 
-// php artisan cache:forget cement_page 
+// php8.4 artisan cache:forget cement_page 
 
-// php artisan view:cache
-// php artisan route:cache
+// php8.4 artisan view:cache
+// php8.4 artisan route:cache
 
 
 
