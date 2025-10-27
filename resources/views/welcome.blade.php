@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
   <title>Белый цемент OYAK ADANA в Новороссийске — продажа и поставки</title>
 <meta name="description" content="Белый цемент OYAK ADANA CEM I 52,5R Super White в Новороссийске. Продажа и доставка по Краснодарскому краю и России. Сертификаты, опт, склад в Цемдолине.">
 <meta name="keywords" content="белый цемент, OYAK ADANA, купить белый цемент, белый цемент Новороссийск, белый цемент Краснодарский край, продажа цемента, цемент оптом, Super White, CEM I 52,5R, поставка цемента">
 <link rel="canonical" href="https://cement093.ru/" />
 <meta name="format-detection" content="telephone=no">
   
+=======
+  <title>Белый Цемент OYAK ADANA — ООО Ново-Трейд</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="description" content="Белый цемент OYAK ADANA CEM I 52,5R Super White. Оптовая торговля и поставки по России. ООО Ново-Трейд, склад Новороссийск.">
+
+>>>>>>> 4f7dc59c45e9ad8664107bc524d42d6bb822dfef
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
   <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
@@ -34,8 +41,8 @@
 
   <!-- Schema.org Product и Organization -->
   @verbatim
-    
- 
+
+
   <script type="application/ld+json">
 {
     "@context" => "https://schema.org/",
@@ -123,13 +130,38 @@
   </style>
 </head>
 <body>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=104805415', 'ym');
+
+    ym(104805415, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/104805415" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+
 <header>
   <img src="{{ asset('images/logo.png') }}" alt="ООО Ново-Трейд" class="logo" style="height:80px;">
   <h1>ООО «Ново-Трейд»</h1>
   <p>Оптовая торговля белым цементом OYAK – ADANA</p>
   <p>CEM I 52,5R Super White | Турция | Поставка по России</p>
 </header>
+<<<<<<< HEAD
 <section id="product" itemscope itemtype="https://schema.org/Product" style="font-family: Arial, sans-serif; color: #222; line-height: 1.6">
+=======
+<section>
+  <h2>О продукте</h2>
+  <p style="line-height: 27px">Белый цемент <strong>OYAK ADANA CEM I 52,5R Super White</strong> — высококачественный цемент турецкого производства, идеально подходящий для строительства и декоративных работ. Этот цемент отличается высокой белизной (85,9%), прочностью на 2-й день 42,5 МПа и соответствует стандарту <strong>TS EN 197-1</strong>. Белый цемент OYAK ADANA обеспечивает долговечность и эстетичный вид строительных конструкций.</p>
+  <p>Производитель: OYAK ADANA (Турция). Порт погрузки: Екинджилер (EKINJILER). Порт выгрузки: Новороссийск, Россия.</p>
+
+>>>>>>> 4f7dc59c45e9ad8664107bc524d42d6bb822dfef
 
   <h2 itemprop="name">Белый цемент OYAK ADANA CEM I 52,5R Super White</h2>
 
@@ -296,8 +328,13 @@
 
 
 <footer>
+<<<<<<< HEAD
   © 2024 ООО «Ново-Трейд» — Официальный дистрибьютор OYAK ADANA.  
   <br><br>
+=======
+  © 2024 ООО «Ново-Трейд» — Официальный дистрибьютор OYAK ADANA.
+  <br>
+>>>>>>> 4f7dc59c45e9ad8664107bc524d42d6bb822dfef
   <a href="https://novo-trade.com" target="_blank">Перейти на основной сайт</a>
 </footer>
 
