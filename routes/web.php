@@ -4,17 +4,12 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 
-// Route::get('/', function () {
-//       return Cache::rememberForever('cement_page', function () {
-//         $html = view('welcome')->render();
-//         return Response::make($html)
-//             ->header('Cache-Control', 'public, max-age=604800'); // cache in browser 7 days
-//     });
-// });
-
-
 Route::get('/', function () {
-      return view('welcome');
+      return Cache::rememberForever('cement_page', function () {
+        $html = view('welcome')->render();
+        return Response::make($html)
+            ->header('Cache-Control', 'public, max-age=604800'); // cache in browser 7 days
+    });
 });
 
 
