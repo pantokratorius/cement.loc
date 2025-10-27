@@ -9,13 +9,7 @@
 <meta name="keywords" content="белый цемент, OYAK ADANA, купить белый цемент, белый цемент Новороссийск, белый цемент Краснодарский край, продажа цемента, цемент оптом, Super White, CEM I 52,5R, поставка цемента">
 <link rel="canonical" href="https://cement093.ru/" />
 <meta name="format-detection" content="telephone=no">
-  
-=======
-  <title>Белый Цемент OYAK ADANA — ООО Ново-Трейд</title>
-  <meta name="format-detection" content="telephone=no">
-  <meta name="description" content="Белый цемент OYAK ADANA CEM I 52,5R Super White. Оптовая торговля и поставки по России. ООО Ново-Трейд, склад Новороссийск.">
 
->>>>>>> 4f7dc59c45e9ad8664107bc524d42d6bb822dfef
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
   <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
