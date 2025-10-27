@@ -327,61 +327,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const originals = Array.from(track.children);
   let slides = [...originals];
-  let index = 0;
   let slideWidth;
   let visibleCount;
-  let timer;
+  let index = 0;
+  let animationFrame;
+
+  // Clone slides for smooth infinite scroll
+  originals.forEach(s => {
+    const clone = s.cloneNode(true);
+    clone.classList.add("clone");
+    track.appendChild(clone);
+  });
+  slides = Array.from(track.children);
 
   function setupCarousel() {
-    clearInterval(timer);
-
     const w = window.innerWidth;
     visibleCount = w <= 600 ? 1 : w <= 900 ? 2 : 3;
 
-    // Reset transform
-    track.style.transition = "none";
-    track.style.transform = "translateX(0px)";
-    index = 0;
-
-    // Remove any previous clones
-    track.querySelectorAll(".clone").forEach(c => c.remove());
-
-    // Add clones for infinite effect
-    originals.slice(0, visibleCount).forEach(s => {
-      const clone = s.cloneNode(true);
-      clone.classList.add("clone");
-      track.appendChild(clone);
-    });
-
-    slides = Array.from(track.children);
-
-    // Get width of one slide dynamically (including computed margin)
+    // Get width including margin dynamically
     const slideStyle = getComputedStyle(slides[0]);
     const marginRight = parseFloat(slideStyle.marginRight);
     slideWidth = slides[0].getBoundingClientRect().width + marginRight;
 
-    timer = setInterval(move, 4000);
+    index = 0;
+    track.style.transition = "none";
+    track.style.transform = "translateX(0px)";
+    cancelAnimationFrame(animationFrame);
+    animate();
   }
 
-  function move() {
-    index++;
-    track.style.transition = "transform 0.8s ease-in-out";
-    track.style.transform = `translateX(-${index * slideWidth}px)`;
+  function animate() {
+    index += 0.5; // pixels per frame; adjust speed here
+    track.style.transform = `translateX(-${index}px)`;
 
-    if (index >= slides.length - visibleCount) {
-      setTimeout(() => {
-        track.style.transition = "none";
-        track.style.transform = "translateX(0px)";
-        index = 0;
-      }, 820);
+    // Reset when we've scrolled past the original slides
+    if (index >= slides.length / 2 * slideWidth) {
+      index = 0;
+      track.style.transition = "none";
+      track.style.transform = `translateX(0px)`;
     }
+
+    animationFrame = requestAnimationFrame(animate);
   }
 
   setupCarousel();
   window.addEventListener("resize", setupCarousel);
 });
-
 </script>
+
 
 
 
