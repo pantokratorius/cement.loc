@@ -249,64 +249,44 @@
 
     /* --- Галерея --- */
     .carousel-wrapper {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      display: flex;
-      gap: 10px;
-      padding: 10px 0;
-    }
-    .carousel-track img {
-      width: 260px;
-      height: 180px;
-      object-fit: cover;
-      scroll-snap-align: center;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
+  overflow: hidden;
+  max-width: 1000px;
+  margin: 30px auto;
+  position: relative;
+}
 
-    /* --- Документы --- */
-    .docs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .doc-card {
-      background: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 15px;
-      flex: 1 1 250px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .doc-card h3 {
-      font-size: 1.1em;
-      margin-bottom: 10px;
-    }
-    .btn-download {
-      display: inline-block;
-      background: #0057b8;
-      color: #fff;
-      padding: 8px 14px;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-    .btn-download:hover {
-      background: #003f87;
-    }
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
 
-    /* --- Контакты --- */
-    .contact a {
-      text-decoration: none;
-    }
+.carousel-track img {
+  flex: 0 0 100%; /* default for mobile: 1 slide */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
 
-    /* --- Адаптивность --- */
-    @media (max-width: 600px) {
-      .carousel-track img { width: 200px; height: 140px; }
-      .docs { flex-direction: column; }
-    }
+.carousel-track img:last-child {
+  margin-right: 0;
+}
+
+/* Tablet: 2 slides */
+@media (min-width: 601px) and (max-width: 900px) {
+  .carousel-track img {
+    flex: 0 0 calc(50% - 7.5px); /* 2 slides with gap */
+  }
+}
+
+/* Desktop: 3 slides */
+@media (min-width: 901px) {
+  .carousel-track img {
+    flex: 0 0 calc(33.333% - 10px); /* 3 slides with gap */
+  }
+}
   </style>
 
 </section>
@@ -327,53 +307,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const originals = Array.from(track.children);
   let slides = [...originals];
-  let slideWidth;
-  let visibleCount;
   let index = 0;
-  let animationFrame;
-
-  // Clone slides for smooth infinite scroll
-  originals.forEach(s => {
-    const clone = s.cloneNode(true);
-    clone.classList.add("clone");
-    track.appendChild(clone);
-  });
-  slides = Array.from(track.children);
+  let visibleCount;
+  let slideWidth;
+  let timer;
 
   function setupCarousel() {
+    clearInterval(timer);
+
+    // Remove previous clones
+    track.querySelectorAll(".clone").forEach(c => c.remove());
+
+    // Responsive: number of visible slides
     const w = window.innerWidth;
     visibleCount = w <= 600 ? 1 : w <= 900 ? 2 : 3;
 
-    // Get width including margin dynamically
-    const slideStyle = getComputedStyle(slides[0]);
-    const marginRight = parseFloat(slideStyle.marginRight);
-    slideWidth = slides[0].getBoundingClientRect().width + marginRight;
+    // Clone all slides for smooth infinite loop
+    originals.forEach(s => {
+      const clone = s.cloneNode(true);
+      clone.classList.add("clone");
+      track.appendChild(clone);
+    });
+
+    slides = Array.from(track.children);
+
+    // Slide width based on first slide
+    slideWidth = originals[0].offsetWidth;
 
     index = 0;
     track.style.transition = "none";
-    track.style.transform = "translateX(0px)";
-    cancelAnimationFrame(animationFrame);
-    animate();
+    track.style.transform = `translateX(0px)`;
+
+    // Start moving every 3 seconds
+    timer = setInterval(move, 3000);
   }
 
-  function animate() {
-    index += 0.5; // pixels per frame; adjust speed here
-    track.style.transform = `translateX(-${index}px)`;
+  function move() {
+    index++;
+    track.style.transition = "transform 0.5s ease-in-out";
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
 
-    // Reset when we've scrolled past the original slides
-    if (index >= slides.length / 2 * slideWidth) {
-      index = 0;
-      track.style.transition = "none";
-      track.style.transform = `translateX(0px)`;
+    // Reset to beginning when reaching original slides
+    if (index >= originals.length) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        track.style.transform = `translateX(0px)`;
+        index = 0;
+      }, 510); // slightly more than transition duration
     }
-
-    animationFrame = requestAnimationFrame(animate);
   }
 
   setupCarousel();
   window.addEventListener("resize", setupCarousel);
 });
 </script>
+
+
 
 
 
