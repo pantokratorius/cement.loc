@@ -323,30 +323,42 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
+  if (!track) return;
+
   const originals = Array.from(track.children);
-  let slides, visibleCount, slideWidth, index = 0, timer;
+  let slides = [...originals];
+  let index = 0;
+  let slideWidth;
+  let visibleCount;
+  let timer;
 
   function setupCarousel() {
     clearInterval(timer);
-    track.innerHTML = "";
-
-    // Clone for looping
-    originals.forEach(s => track.appendChild(s.cloneNode(true)));
 
     const w = window.innerWidth;
     visibleCount = w <= 600 ? 1 : w <= 900 ? 2 : 3;
 
-    // Add clones for infinite effect
-    originals.slice(0, visibleCount).forEach(s => track.appendChild(s.cloneNode(true)));
-    slides = Array.from(track.children);
-
-    // Get width of one slide (precise)
-    slideWidth = slides[0].getBoundingClientRect().width + 15; // includes margin-right
-
-    index = 0;
+    // Reset transform
     track.style.transition = "none";
     track.style.transform = "translateX(0px)";
-    void track.offsetWidth; // force repaint
+    index = 0;
+
+    // Remove any previous clones
+    track.querySelectorAll(".clone").forEach(c => c.remove());
+
+    // Add clones for infinite effect
+    originals.slice(0, visibleCount).forEach(s => {
+      const clone = s.cloneNode(true);
+      clone.classList.add("clone");
+      track.appendChild(clone);
+    });
+
+    slides = Array.from(track.children);
+
+    // Get width of one slide dynamically (including computed margin)
+    const slideStyle = getComputedStyle(slides[0]);
+    const marginRight = parseFloat(slideStyle.marginRight);
+    slideWidth = slides[0].getBoundingClientRect().width + marginRight;
 
     timer = setInterval(move, 4000);
   }
@@ -356,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.transition = "transform 0.8s ease-in-out";
     track.style.transform = `translateX(-${index * slideWidth}px)`;
 
-    if (index === slides.length - visibleCount) {
+    if (index >= slides.length - visibleCount) {
       setTimeout(() => {
         track.style.transition = "none";
         track.style.transform = "translateX(0px)";
@@ -368,6 +380,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupCarousel();
   window.addEventListener("resize", setupCarousel);
 });
+
 </script>
 
 

@@ -13,6 +13,11 @@ Route::get('/', function () {
 });
 
 
+// Route::get('/', function () {
+//       return view('welcome');
+// });
+
+
 // php8.4 artisan cache:forget cement_page 
 
 // php8.4 artisan view:cache
