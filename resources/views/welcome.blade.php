@@ -248,21 +248,14 @@
     }
 
     /* --- Галерея --- */
-    .carousel-wrapper {
-  overflow: hidden;
-  max-width: 1000px;
-  margin: 30px auto;
-  position: relative;
-}
-
-.carousel-track {
+    .carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
 
 .carousel-track img {
-  flex: 0 0 100%; /* default for mobile: 1 slide */
+  flex: 0 0 100%; /* mobile default: 1 slide */
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
@@ -277,14 +270,14 @@
 /* Tablet: 2 slides */
 @media (min-width: 601px) and (max-width: 900px) {
   .carousel-track img {
-    flex: 0 0 calc(50% - 7.5px); /* 2 slides with gap */
+    flex: 0 0 calc(50% - 7.5px);
   }
 }
 
 /* Desktop: 3 slides */
 @media (min-width: 901px) {
   .carousel-track img {
-    flex: 0 0 calc(33.333% - 10px); /* 3 slides with gap */
+    flex: 0 0 calc(33.333% - 10px);
   }
 }
   </style>
@@ -305,7 +298,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const track = document.querySelector(".carousel-track");
   if (!track) return;
 
-  const originals = Array.from(track.children);
+  const originals = Array.from(track.querySelectorAll("img:not(.clone)"));
   let slides = [...originals];
   let index = 0;
   let visibleCount;
@@ -315,14 +308,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function setupCarousel() {
     clearInterval(timer);
 
-    // Remove previous clones
+    // Remove old clones
     track.querySelectorAll(".clone").forEach(c => c.remove());
 
-    // Responsive: number of visible slides
+    // Determine visible slides
     const w = window.innerWidth;
     visibleCount = w <= 600 ? 1 : w <= 900 ? 2 : 3;
 
-    // Clone all slides for smooth infinite loop
+    // Clone all original slides for infinite loop
     originals.forEach(s => {
       const clone = s.cloneNode(true);
       clone.classList.add("clone");
@@ -331,14 +324,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     slides = Array.from(track.children);
 
-    // Slide width based on first slide
-    slideWidth = originals[0].offsetWidth;
+    // Compute slide width including margin
+    const style = getComputedStyle(originals[0]);
+    const marginRight = parseFloat(style.marginRight);
+    slideWidth = originals[0].offsetWidth + marginRight;
 
+    // Reset
     index = 0;
     track.style.transition = "none";
     track.style.transform = `translateX(0px)`;
 
-    // Start moving every 3 seconds
+    // Step every 3 seconds
     timer = setInterval(move, 3000);
   }
 
@@ -347,19 +343,19 @@ document.addEventListener("DOMContentLoaded", () => {
     track.style.transition = "transform 0.5s ease-in-out";
     track.style.transform = `translateX(-${index * slideWidth}px)`;
 
-    // Reset to beginning when reaching original slides
     if (index >= originals.length) {
       setTimeout(() => {
         track.style.transition = "none";
         track.style.transform = `translateX(0px)`;
         index = 0;
-      }, 510); // slightly more than transition duration
+      }, 510);
     }
   }
 
   setupCarousel();
   window.addEventListener("resize", setupCarousel);
 });
+
 </script>
 
 
