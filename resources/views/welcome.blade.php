@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
   <title>Белый цемент OYAK ADANA в Новороссийске — продажа и поставки</title>
 <meta name="description" content="Белый цемент OYAK ADANA CEM I 52,5R Super White в Новороссийске. Продажа и доставка по Краснодарскому краю и России. Сертификаты, опт, склад в Цемдолине.">
 <meta name="keywords" content="белый цемент, OYAK ADANA, купить белый цемент, белый цемент Новороссийск, белый цемент Краснодарский край, продажа цемента, цемент оптом, Super White, CEM I 52,5R, поставка цемента">
@@ -147,15 +146,7 @@
   <p>Оптовая торговля белым цементом OYAK – ADANA</p>
   <p>CEM I 52,5R Super White | Турция | Поставка по России</p>
 </header>
-<<<<<<< HEAD
 <section id="product" itemscope itemtype="https://schema.org/Product" style="font-family: Arial, sans-serif; color: #222; line-height: 1.6">
-=======
-<section>
-  <h2>О продукте</h2>
-  <p style="line-height: 27px">Белый цемент <strong>OYAK ADANA CEM I 52,5R Super White</strong> — высококачественный цемент турецкого производства, идеально подходящий для строительства и декоративных работ. Этот цемент отличается высокой белизной (85,9%), прочностью на 2-й день 42,5 МПа и соответствует стандарту <strong>TS EN 197-1</strong>. Белый цемент OYAK ADANA обеспечивает долговечность и эстетичный вид строительных конструкций.</p>
-  <p>Производитель: OYAK ADANA (Турция). Порт погрузки: Екинджилер (EKINJILER). Порт выгрузки: Новороссийск, Россия.</p>
-
->>>>>>> 4f7dc59c45e9ad8664107bc524d42d6bb822dfef
 
   <h2 itemprop="name">Белый цемент OYAK ADANA CEM I 52,5R Super White</h2>
 
@@ -321,21 +312,17 @@
 </section>
 
 
+
 <footer>
-<<<<<<< HEAD
   © 2024 ООО «Ново-Трейд» — Официальный дистрибьютор OYAK ADANA.  
   <br><br>
-=======
-  © 2024 ООО «Ново-Трейд» — Официальный дистрибьютор OYAK ADANA.
-  <br>
->>>>>>> 4f7dc59c45e9ad8664107bc524d42d6bb822dfef
   <a href="https://novo-trade.com" target="_blank">Перейти на основной сайт</a>
 </footer>
 
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const track = document.getElementById("carousel");
+  const track = document.querySelector(".carousel-track");
   const originals = Array.from(track.children);
   let slides, visibleCount, slideWidth, index = 0, timer;
 
