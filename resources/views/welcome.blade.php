@@ -10,9 +10,9 @@
 <meta name="format-detection" content="telephone=no">
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
-  <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
-  <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+  <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+  <link rel="shortcut icon" href="{{ asset('favicon.svg') }}">
+  <link rel="apple-touch-icon" href="{{ asset('favicon.svg') }}">
   <meta name="theme-color" content="#004080">
 
   <!-- Open Graph / Facebook -->
