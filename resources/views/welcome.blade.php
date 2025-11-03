@@ -174,6 +174,9 @@
     <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
     <meta itemprop="price" content="15000">
     </div>
+     <img itemprop="image" src="{{ asset('images/1.jpeg') }}" alt="Белый цемент OYAK ADANA — мешки на складе">
+  <img itemprop="image" src="{{ asset('images/2.jpeg') }}" alt="Упаковка цемента OYAK ADANA CEM I 52,5R Super White">
+
   <meta itemprop="sku" content="CEM I 52,5R">
   <meta itemprop="countryOfOrigin" content="TR">
 
