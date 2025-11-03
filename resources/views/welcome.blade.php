@@ -56,19 +56,13 @@
       "logo": "{{ asset('images/logo.png') }}",
       "url": "https://cement093.ru/"
     },
-      "review": {
-        "@type": "Review",
-        "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-        },
-        "author": {
-        "@type": "Person",
-        "name": "Иван Петров"
-        },
-        "datePublished": "2024-10-10",
-        "reviewBody": "Отличный цемент! Используем для облицовочных работ — белизна и прочность на высоте."
+    "offers": {
+      "@type": "Offer",
+      "url": "https://cement093.ru/",
+      "priceCurrency": "RUB",
+      "price": "15000",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
     }
   },
   {
