@@ -172,7 +172,7 @@
     <meta itemprop="priceCurrency" content="RUB">
     <meta itemprop="availability" content="https://schema.org/InStock">
     <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
-    <meta itemprop="price" content="По запросу">
+    <meta itemprop="price" content="15000">
     </div>
   <meta itemprop="sku" content="CEM I 52,5R">
   <meta itemprop="countryOfOrigin" content="TR">
