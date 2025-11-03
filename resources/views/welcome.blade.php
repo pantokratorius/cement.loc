@@ -37,65 +37,68 @@
 
 
   <script type="application/ld+json">
-{
-    "@context" => "https://schema.org/",
-    "@type" => "Product",
-    "name" => "Белый Цемент OYAK ADANA CEM I 52,5R Super White",
-    "image" => [
-        asset('images/1.jpeg'),
-        asset('images/2.jpeg')
+[
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Белый Цемент OYAK ADANA CEM I 52,5R Super White",
+    "image": [
+      "{{ asset('images/1.jpeg') }}",
+      "{{ asset('images/2.jpeg') }}"
     ],
-    "description" => "Оптовая поставка белого цемента OYAK ADANA CEM I 52,5R Super White по России.",
-    "brand" => ["@type" => "Brand", "name" => "OYAK ADANA"],
-    "manufacturer" => [
-        "@type" => "Organization",
-        "name" => "OYAK ADANA",
-        "logo" => asset('images/logo.png'),
-        "url" => "https://cement093.ru/"
-    ],
-    "offers" => [
-        "@type" => "Offer",
-        "url" => "https://cement093.ru/",
-        "priceCurrency" => "RUB",
-        "availability" => "https://schema.org/InStock",
-        "itemCondition" => "https://schema.org/NewCondition"
-    ]
-}
+    "description": "Оптовая поставка белого цемента OYAK ADANA CEM I 52,5R Super White по России.",
+    "brand": {
+      "@type": "Brand",
+      "name": "OYAK ADANA"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "OYAK ADANA",
+      "logo": "{{ asset('images/logo.png') }}",
+      "url": "https://cement093.ru/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://cement093.ru/",
+      "priceCurrency": "RUB",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ООО Ново-Трейд",
+    "url": "https://cement093.ru/",
+    "logo": "{{ asset('images/logo.png') }}",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+7 918 457-62-52",
+      "contactType": "sales",
+      "areaServed": "RU",
+      "availableLanguage": ["Russian"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "наб. Адмирала Серебрякова 27А, офис 55",
+      "postalCode": "353905",
+      "addressLocality": "Новороссийск",
+      "addressCountry": "RU"
+    },
+    "hasPOS": {
+      "@type": "Place",
+      "name": "Склад Парма",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ул. Промышленная 8, склад Парма",
+        "addressLocality": "Новороссийск",
+        "addressCountry": "RU"
+      }
+    }
+  }
+]
 </script>
 
-<script type="application/ld+json">
-{
-    "@context" => "https://schema.org",
-    "@type" => "Organization",
-    "name" => "ООО Ново-Трейд",
-    "url" => "https://cement093.ru/",
-    "logo" => asset('images/logo.png'),
-    "contactPoint" => [
-        "@type" => "ContactPoint",
-        "telephone" => "+7 918 457-62-52",
-        "contactType" => "sales",
-        "areaServed" => "RU",
-        "availableLanguage" => ["Russian"]
-    ],
-    "address" => [
-    "@type" => "PostalAddress",
-    "streetAddress" => "наб. Адмирала Серебрякова 27А, офис 55",
-    "postalCode" => "353905",
-    "addressLocality" => "Новороссийск",
-    "addressCountry" => "RU"
-],
-"hasPOS" => [
-    "@type" => "Place",
-    "name" => "Склад Парма",
-    "address" => {
-        "@type" => "PostalAddress",
-        "streetAddress" => "ул. Промышленная 8, склад Парма",
-        "addressLocality" => "Новороссийск",
-        "addressCountry" => "RU"
-    }
-]
-}
-</script>
  @endverbatim
 
   <style>
@@ -151,14 +154,14 @@
   <h2 itemprop="name">Белый цемент OYAK ADANA CEM I 52,5R Super White</h2>
 
   <p itemprop="description" style="line-height: 27px">
-    Белый цемент <strong>OYAK ADANA CEM I 52,5R Super White</strong> — высококачественный цемент турецкого производства, идеально подходящий для строительства и декоративных работ. 
-    Этот цемент отличается высокой белизной (85,9%), прочностью на 2-й день 42,5 МПа и соответствует стандарту 
+    Белый цемент <strong>OYAK ADANA CEM I 52,5R Super White</strong> — высококачественный цемент турецкого производства, идеально подходящий для строительства и декоративных работ.
+    Этот цемент отличается высокой белизной (85,9%), прочностью на 2-й день 42,5 МПа и соответствует стандарту
     <strong>TS EN 197-1</strong>. Белый цемент OYAK ADANA обеспечивает долговечность и эстетичный вид строительных конструкций.
   </p>
 
   <p>
-    Производитель: <span itemprop="brand">OYAK ADANA</span> (Турция).  
-    Порт погрузки: Екинджилер (EKINJILER).  
+    Производитель: <span itemprop="brand">OYAK ADANA</span> (Турция).
+    Порт погрузки: Екинджилер (EKINJILER).
     Порт выгрузки: Новороссийск, Россия.
   </p>
 
@@ -287,7 +290,7 @@
 
 
 <footer>
-  © 2024 ООО «Ново-Трейд» — Официальный дистрибьютор OYAK ADANA.  
+  © 2024 ООО «Ново-Трейд» — Официальный дистрибьютор OYAK ADANA.
   <br><br>
   <a href="https://novo-trade.com" target="_blank">Перейти на основной сайт</a>
 </footer>
