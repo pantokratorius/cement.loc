@@ -165,7 +165,13 @@
     Порт погрузки: Екинджилер (EKINJILER).
     Порт выгрузки: Новороссийск, Россия.
   </p>
-
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer" style="margin-top: 20px;">
+    <link itemprop="url" href="https://cement093.ru/">
+    <meta itemprop="priceCurrency" content="RUB">
+    <meta itemprop="availability" content="https://schema.org/InStock">
+    <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
+    <meta itemprop="price" content="По запросу">
+    </div>
   <meta itemprop="sku" content="CEM I 52,5R">
   <meta itemprop="countryOfOrigin" content="TR">
 
