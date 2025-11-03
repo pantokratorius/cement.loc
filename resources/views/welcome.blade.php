@@ -42,8 +42,10 @@
     "@type": "Product",
     "name": "Белый Цемент OYAK ADANA CEM I 52,5R Super White",
     "image": [
-      "{{ asset('images/1.jpeg') }}",
-      "{{ asset('images/2.jpeg') }}"
+        @endverbatim
+        "{{ asset('images/1.jpeg') }}",
+        "{{ asset('images/2.jpeg') }}"
+      @verbatim
     ],
     "description": "Оптовая поставка белого цемента OYAK ADANA CEM I 52,5R Super White по России.",
     "brand": {
