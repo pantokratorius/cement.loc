@@ -174,8 +174,6 @@
     <meta itemprop="itemCondition" content="https://schema.org/NewCondition">
     <meta itemprop="price" content="15000">
     </div>
-     <img itemprop="image" src="{{ asset('images/1.jpeg') }}" alt="Белый цемент OYAK ADANA — мешки на складе">
-  <img itemprop="image" src="{{ asset('images/2.jpeg') }}" alt="Упаковка цемента OYAK ADANA CEM I 52,5R Super White">
 
   <meta itemprop="sku" content="CEM I 52,5R">
   <meta itemprop="countryOfOrigin" content="TR">
@@ -183,17 +181,17 @@
   <h2 id="gallery">Фотогалерея</h2>
   <div class="carousel-wrapper">
     <div class="carousel-track">
-      <img src="{{ asset('images/1.jpeg') }}" alt="Белый цемент OYAK ADANA — мешки на складе">
-      <img src="{{ asset('images/2.jpeg') }}" alt="Упаковка цемента OYAK ADANA CEM I 52,5R Super White">
-      <img src="{{ asset('images/3.jpeg') }}" alt="Паллеты белого цемента на складе в Новороссийске">
-      <img src="{{ asset('images/4.jpeg') }}" alt="Мешки цемента OYAK ADANA на поддонах">
-      <img src="{{ asset('images/5.jpeg') }}" alt="OYAK ADANA Super White — фасовка 50 кг">
-      <img src="{{ asset('images/6.jpeg') }}" alt="Белый цемент OYAK ADANA в транспортировке">
-      <img src="{{ asset('images/7.jpeg') }}" alt="Поставка цемента в порту Екинджилер">
-      <img src="{{ asset('images/8.jpeg') }}" alt="OYAK ADANA — белоснежный цемент премиум-класса">
-      <img src="{{ asset('images/WhatsApp Image 2025-06-27 at 11.30.32.jpeg') }}" alt="Белый цемент OYAK ADANA — упаковка и хранение" style="object-fit: contain">
-      <img src="{{ asset('images/WhatsApp Image 2025-06-27 at 11.27.51.jpeg') }}" alt="Образец цемента OYAK ADANA Super White">
-      <img src="{{ asset('images/WhatsApp Image 2025-06-27 at 11.27.51 (2).jpeg') }}" alt="Производство белого цемента OYAK ADANA">
+      <img itemprop="image" src="{{ asset('images/1.jpeg') }}" alt="Белый цемент OYAK ADANA — мешки на складе">
+      <img itemprop="image" src="{{ asset('images/2.jpeg') }}" alt="Упаковка цемента OYAK ADANA CEM I 52,5R Super White">
+      <img itemprop="image" src="{{ asset('images/3.jpeg') }}" alt="Паллеты белого цемента на складе в Новороссийске">
+      <img itemprop="image" src="{{ asset('images/4.jpeg') }}" alt="Мешки цемента OYAK ADANA на поддонах">
+      <img itemprop="image" src="{{ asset('images/5.jpeg') }}" alt="OYAK ADANA Super White — фасовка 50 кг">
+      <img itemprop="image" src="{{ asset('images/6.jpeg') }}" alt="Белый цемент OYAK ADANA в транспортировке">
+      <img itemprop="image" src="{{ asset('images/7.jpeg') }}" alt="Поставка цемента в порту Екинджилер">
+      <img itemprop="image" src="{{ asset('images/8.jpeg') }}" alt="OYAK ADANA — белоснежный цемент премиум-класса">
+      <img itemprop="image" src="{{ asset('images/WhatsApp Image 2025-06-27 at 11.30.32.jpeg') }}" alt="Белый цемент OYAK ADANA — упаковка и хранение" style="object-fit: contain">
+      <img itemprop="image" src="{{ asset('images/WhatsApp Image 2025-06-27 at 11.27.51.jpeg') }}" alt="Образец цемента OYAK ADANA Super White">
+      <img itemprop="image" src="{{ asset('images/WhatsApp Image 2025-06-27 at 11.27.51 (2).jpeg') }}" alt="Производство белого цемента OYAK ADANA">
     </div>
   </div>
 
