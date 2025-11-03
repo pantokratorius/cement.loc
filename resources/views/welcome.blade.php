@@ -35,8 +35,7 @@
   <!-- Schema.org Product и Organization -->
   @verbatim
 
-
-  <script type="application/ld+json">
+<script type="application/ld+json">
 [
   {
     "@context": "https://schema.org/",
@@ -61,6 +60,7 @@
       "@type": "Offer",
       "url": "https://cement093.ru/",
       "priceCurrency": "RUB",
+      "price": "15000",
       "availability": "https://schema.org/InStock",
       "itemCondition": "https://schema.org/NewCondition"
     }
@@ -98,6 +98,7 @@
   }
 ]
 </script>
+
 
  @endverbatim
 
